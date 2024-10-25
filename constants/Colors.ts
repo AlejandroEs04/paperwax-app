@@ -25,6 +25,8 @@ export const Colors = {
   },
   primary: {
     background: '#1d4ed8', 
-    text: '#1d4ed8'
+    backgroundSecondary: '#262626', 
+    text: '#1d4ed8', 
+    textPrimary: '#1d4ed8'
   }
 };

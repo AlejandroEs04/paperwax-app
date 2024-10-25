@@ -18,43 +18,36 @@ export default function login() {
     }
 
     return (
-        <SafeAreaView style={styles.safeArea}>
-            <View style={styles.container}>
-                <ThemedText type='title'>Bienvenido</ThemedText>
-                <Text style={styles.text}>Por favor ingrese sus claves para iniciar sesión en el dispositivo</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Identificador"
-                    value={id}
-                    onChangeText={setId}
-                    autoCapitalize="none"
-                />
-                <TextInput
-                    style={styles.input}
-                    placeholder="Contraseña"
-                    value={password}
-                    onChangeText={setPassword}
-                    secureTextEntry
-                />
-                {error ? <Text style={styles.error}>{error}</Text> : null}
-                <StyledButton 
-                    title="Iniciar Sesión" 
-                    onPress={handleLogin} 
-                />
+        <ThemedView style={styles.container}>
+            <ThemedText type='title'>Bienvenido</ThemedText>
+            <Text style={styles.text}>Por favor ingrese sus claves para iniciar sesión en el dispositivo</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Identificador"
+                value={id}
+                onChangeText={setId}
+                autoCapitalize="none"
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Contraseña"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+            />
+            {error ? <Text style={styles.error}>{error}</Text> : null}
+            <StyledButton 
+                title="Iniciar Sesión" 
+                onPress={handleLogin} 
+            />
 
-                <Text style={styles.text}>En caso de haber olvidado sus claves, favor de avisar al personal de soporte tecnico</Text>
-            </View>
-        </SafeAreaView>
+            <Text style={styles.text}>En caso de haber olvidado sus claves, favor de avisar al personal de soporte tecnico</Text>
+        </ThemedView>
     )
 }
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
-    },
     container: {
-        padding: 20, 
         flex: 1, 
         justifyContent: 'center',
     },
